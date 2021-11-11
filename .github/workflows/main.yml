@@ -2,8 +2,8 @@ name: Get Feed
 
 on:
   schedule:
-    - cron: "0 12 * * *" # at 12:00 in UTC, which is 4:00 in PST
-    workflow_dispatch:
+    - cron: "0 * * * *" # 6pm IST
+  workflow_dispatch:
 
 jobs:
   get-feed:
@@ -20,5 +20,5 @@ jobs:
 
       - name: Update Notion Feed
         run: |
-          curl -o index.js https://raw.githubusercontent.com/Pacman99/notion-feeder/master/dist/index.js
+          curl -o index.js https://raw.githubusercontent.com/ravgeetdhillon/notion-feeder/build/dist/index.js
           node index.js
